@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinoBilleter</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css">
+    <script src="Index.js"></script>
+
+
+<body>
+
+<!-- Table funsksjon som gjør det mulig å kunne velge mellom filmene !-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Bestilling av Kinobilletter</h1>
+
+<!--Her kan man velge film !-->
+    <form>
+        <div class="mb-3">
+            <label for="film" class="form-label">Velg film:</label>
+            <select class="form-select" name="film" id="film">
+                <option value="Ant-Man and the Wasp: Quantumania">Ant-Man and the Wasp: Quantumania</option>
+                <option value="Avatar: The Way Of Water">Avatar: The Way Of Water</option>
+                <option value="Knock At The Cabin">Knock At The Cabin</option>
+                <option value="John Wick: Chapter 4">John Wick: Chapter 4</option>
+            </select>
+        </div>
+
+        <!-- Her vises det i hvor man kan skrive inn antall!-->
+        <div class="mb-3">
+            <label for="antall" class="form-label">Antall:</label>
+            <input class="form-control" type="text" id="antall" style="width: 20px" />
+            <label class="error" for="antall" id="errorAntall" style="color: red"></label>
+        </div>
+
+        <!-- Her vises det i html hvor man kan skrive inn i de forskjellige informasjonsboksene, som Fornavn, Etternavn, Telefonnr og Epost!-->
+        <!-- Her vises også error meldinger på siden hvis det ikke blir skrevet inn noe informasjon! -->
+        <div class="mb-3">
+            <label for="fornavn" class="form-label">Fornavn:</label>
+            <input class="form-control" type="text" id="fornavn" />
+            <div id="errorFornavn" class="form-text error-message" style="color: red"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="etternavn" class="form-label">Etternavn:</label>
+            <input class="form-control" type="text" id="etternavn" />
+            <div id="errorEtternavn" class="form-text error-message" style="color: red"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="telefonnr" class="form-label">Telefonnr:</label>
+            <input class="form-control" type="number" id="telefonnr" />
+            <div id="errorTelefonnr" class="form-text error-message" style="color: red"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="epost" class="form-label">Epost:</label>
+            <input class="form-control" type="text" id="epost" />
+            <div id="errorEpost" class="form-text error-message" style="color: red"></div>
+        </div>
+
+        <!-- Knapp som er kobla til javascripten, som gjør det mulig å lagre billettene i et array !-->
+        <button class="btn btn-primary" type="button" value="kjøpBillett" onclick="kjøp()">Kjøp billett</button>
+    </form>
+        <div class="col-md-12">
+            <h2>Alle Billetter</h2>
+            <table class="table table-striped">
+                <tbody id="visBilletter"></tbody>
+            </table>
+
+            <!-- Knapp som er kobla til javascripten, som gjør det mulig å slette billetten man har laget !-->
+            <button class="btn btn-danger" onclick="slett()">Slett alle Billetter</button>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
