@@ -8,7 +8,7 @@ function kjøp() {
         epost: $("#epost").val()
     };
 
-    // Add validation for user input
+    // If else setninger som gjør det mulig at brukeren får mld hvis han/hun ikke skriver inn noe i input boksene
 
     if (kino.antall == "") {
         $("#errorAntall").html ("Må skrive noe inn i antall");
@@ -36,7 +36,7 @@ function kjøp() {
         $("#errorTelefonnr").html("")
     }
 
-    // Send data to the server
+    // Sender data til serveren
 
     $.post("/lagre", kino, function () {
         hentBillett();
