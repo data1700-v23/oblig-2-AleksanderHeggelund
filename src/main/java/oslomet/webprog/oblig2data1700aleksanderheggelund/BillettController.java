@@ -8,20 +8,20 @@ import java.util.List;
 @RestController
 public class BillettController {
 
-    private final List<Billett> alleKunder = new ArrayList<>();
+    private final List<Billett> alleBilletter = new ArrayList<>();
 
     @PostMapping("/lagre")
     public void lagreKunde(Billett innKunde){
-        alleKunder.add(innKunde);
+        alleBilletter.add(innKunde);
     }
     @GetMapping("/hentAlle")
     public List<Billett> hentAlle(){
-        return alleKunder;
+        return alleBilletter;
     }
 
     @GetMapping("/slettAlle")
     public void slettAlle(){
-        alleKunder.clear();
+        alleBilletter.clear();
     }
 }
 
